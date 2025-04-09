@@ -37,14 +37,14 @@ alias dotsync='cp ~/.bashrc ~/dotfiles/.bashrc && git -C ~/dotfiles commit -am "
 
 backup-setting() {
   cp ~/.bashrc ~/dotfiles/.bashrc
-  cp ~/.config/nvim/lua ~/dotfiles/lua
+  cp -r ~/.config/nvim/lua/ ~/dotfiles/lua/
 
   cd ~/dotfiles || exit 1
 
   if [[ -n $(git status --porcelain) ]]; then
     echo "🔄 Changes detected! Committing and pushing..."
     git add .
-    git commit -m "Update .bashrc $(date +'%Y-%m-%d %H:%M:%S')"
+    git commit -m "Update backup-setting $(date +'%Y-%m-%d %H:%M:%S')"
     git push
     echo "✅ Successfully updated dotfiles repo!"
   else
