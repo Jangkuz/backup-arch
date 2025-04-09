@@ -37,7 +37,8 @@ alias dotsync='cp ~/.bashrc ~/dotfiles/.bashrc && git -C ~/dotfiles commit -am "
 
 backup-setting() {
   cp ~/.bashrc ~/dotfiles/.bashrc
-  cp ~/.config/nvim/lua/ ~/dotfiles/lua/
+  # cp ~/.config/nvim/lua/ ~/dotfiles/lua/
+  rsync -ac --delete ~/.config/nvim/lua/ ~/dotfiles/lua/
 
   cd ~/dotfiles || exit 1
 
