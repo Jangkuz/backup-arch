@@ -1,0 +1,1 @@
+/home/jangkuz/.config/nvim/lua
