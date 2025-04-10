@@ -35,7 +35,7 @@ fe() {
 # Add to ~/.bashrc
 alias dotsync='cp ~/.bashrc ~/dotfiles/.bashrc && git -C ~/dotfiles commit -am "Update .bashrc $(date)" && git -C ~/dotfiles push'
 
-backup-setting() {
+dotfile-backup() {
   cp ~/.bashrc ~/dotfiles/.bashrc
   # cp ~/.config/nvim/lua/ ~/dotfiles/lua/
   rsync -ac --delete ~/.config/nvim/lua/ ~/dotfiles/lua/
