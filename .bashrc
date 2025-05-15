@@ -33,7 +33,7 @@ fe() {
 }
 
 # Add to ~/.bashrc
-alias dotsync='cp ~/.bashrc ~/dotfiles/.bashrc && git -C ~/dotfiles commit -am "Update .bashrc $(date)" && git -C ~/dotfiles push'
+#alias dotsync='cp ~/.bashrc ~/dotfiles/.bashrc && git -C ~/dotfiles commit -am "Update .bashrc $(date)" && git -C ~/dotfiles push'
 
 dotfile-backup() {
   cp ~/.bashrc ~/dotfiles/.bashrc
@@ -60,3 +60,4 @@ dotfile-backup() {
 
   cd - >/dev/null || return
 }
+source /usr/share/doc/pkgfile/command-not-found.bash
