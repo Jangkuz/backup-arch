@@ -70,7 +70,8 @@ ZSH_THEME="simple"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colorize dotnet docker docker-compose fzf zsh-syntax-highlighting zsh-autocomplete)
+plugins=(git colorize dotnet docker docker-compose fzf zsh-syntax-highlighting)
+#plugins=(git colorize dotnet docker docker-compose fzf zsh-syntax-highlighting zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,7 +116,7 @@ autoload -Uz compinit
 compinit
 autoload -Uz promptinit
 promptinit
-prompt adam2
+prompt adam1 red
 # End of lines added by compinstall
 #
 # ~/.bashrc
@@ -131,7 +132,7 @@ if [[ -f "$HOME/.cache/wal/sequences" ]]; then
   (cat "$HOME/.cache/wal/sequences")
 fi
 export DOTNET_ROOT=/usr/share/dotnet
-export PATH=$PATH:/usr/share/dotnet
+export PATH=$PATH:$DOTNET_ROOT:$HOME/.dotnet/tools:#DOTNET_ROOT/tools
 
 export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
